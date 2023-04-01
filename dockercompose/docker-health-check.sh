@@ -17,12 +17,14 @@
 
 curl 127.0.0.1:7091
 res=$?
-passCode=0
+passCode=52
 while [ "$res" != "$passCode" ];do
-  echo "wait seata server"
   sleep 5
   curl 127.0.0.1:7091
   res=$?
 done
 
+sleep 5
+curl http://127.0.0.1:7091
+sleep 10
 
